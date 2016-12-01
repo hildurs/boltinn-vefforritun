@@ -1,0 +1,27 @@
+extends layout.pug
+
+block extraHeader
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+  link(rel='stylesheet', href='/stylesheets/games.css')
+block content
+  .gameContainer
+    h1 Leikir á dagskrá
+    .table-responsive
+      table#table.table.table-hover.table-striped.table-bordered.table-games
+        thead
+          tr
+            th#table-date(scope='col') Dagsetning:
+            th#table-time(scope='col') Tími:
+            th#table-tournament(scope='col') Mót:
+            th#table-location(scope='col') Staðsetning:
+            th#table-home(scope='col') Heimalið:
+            th#table-away(scope='col') Útilið:
+        tbody#games-table
+          each leikur in leikir
+            tr
+              td= leikur.date
+              td= leikur.time
+              td= leikur.tournament
+              td= leikur.location
+              td= leikur.homeTeam
+              td= leikur.awayTeam

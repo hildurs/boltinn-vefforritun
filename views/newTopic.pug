@@ -1,0 +1,32 @@
+extends layout
+
+block extraHeader
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+  link(rel='stylesheet', href='/stylesheets/newTopic.css')
+  script(src='/javascripts/newTopic.js')
+
+block content
+  .topicContainer
+    h1 Nýr þráður
+    form.newentry_form#new-entry(method='POST' action='/newTopic')
+      .form-group
+        label(for='name') Nafn:
+        input#new-entry-name.form-control(type='text', name='name', placeholder='Skrifaðu nafn hér', autocomplete='off')
+      br
+      .form-group
+        label(for='topic_name') Efni:
+        input#new-entry-topic.form-control(type='text', name='topic_name', placeholder='Skrifaðu fyrirsögn hér', autocomplete='off')
+        br
+      .form-group
+        label(for='data') Texti:
+        textarea#new-entry-text.form-control(autocomplete='off', rows='5', name='data', placeholder='Skrifaðu texta hér')
+        .col-md-3
+          span
+            small
+              | Fjöldi stafa
+              span.char-count  0
+              |   af hámarksfjölda 1000
+          br
+      .button-save
+        a.btn.btn-primary(href='news') Hætta við
+        button.btn.btn-primary(type='submit') Vista þráð

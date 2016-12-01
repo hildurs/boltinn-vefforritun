@@ -1,0 +1,14 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint:recommended",
+  "rules": {
+      "no-var": ["error"],
+
+    },
+  "env": {
+    "browser": true,
+    "jquery": true,
+  },
+  "globals": { "$": true },
+  "plugins": []
+}

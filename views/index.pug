@@ -1,0 +1,34 @@
+extends layout.pug
+
+block extraHeader
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+  link(rel='stylesheet', href='/stylesheets/index.css')
+
+block content
+  h1.latest_news Nýjustu fréttir úr fótboltaheimi Íslands
+  .container
+    .index-container
+      .entries
+        if !data || data.length === 0
+          p Engar fréttir komnar!
+          hr
+        else
+          each item in data
+            .panel-success
+              .panel-heading
+                h3.topicname= item.entry_topic_name
+                span.date= moment(item.entry_date).format('DD.MM.YYYY HH:mm')
+              .panel-body
+                p.name= item.entry_name
+                  |  skrifar:
+                p.text= item.entry_data
+      .table-container
+        table.table.table-striped.index-table.score-table.w3-hide-small
+          caption#table-header Úrslit dagsins:
+          thead
+            tr
+              th#result-date(scope='col') Dagsetning:
+              th#result-homeTeam(scope='col') Heimalið:
+              th#result-awayTeam(scope='col') Útilið:
+              th#result-results(scope='col') Úrslit:
+          tbody#results-table

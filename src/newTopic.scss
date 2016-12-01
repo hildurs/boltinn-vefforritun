@@ -1,0 +1,23 @@
+
+h1 {
+  text-align: center;
+}
+
+.topicContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5%;
+  max-width: 80%;
+}
+
+.button-save {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
+}
+
+footer {
+  margin-top: 2rem;
+}

@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Anton");
+
+.header {
+  font-size: 4rem;
+  text-align: left;
+}
+
+.site-header {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 5%;
+}
+
+.entries{
+  max-width: 90%;
+}
+
+.entry_panel {
+  border: 2px solid green;
+  background-color: white;
+  margin-top: 2rem;
+}
+
+.text {
+  text-align: left;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.panel-body {
+  border: 2px solid green;
+}
+
+.topicname {
+  font-family: 'Anton', sans-serif;
+  color: green;
+  margin-left: 1rem;
+}
+
+.name {
+  text-align: left;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.date {
+  color: green;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 2rem;
+}
